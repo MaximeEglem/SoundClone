@@ -1,0 +1,11 @@
+<header>
+  <% logo = image_tag("SoundClone_logo.png", :alt => "SoundClone", :class => "round") %>
+  <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to "Login", '#' %></li>
+    </ul>
+  </nav>
+</header>
