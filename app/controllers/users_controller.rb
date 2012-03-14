@@ -5,6 +5,17 @@ class UsersController < ApplicationController
   end
 
   def new
-    @title = "Sign in"
+    @user = User.new
+    @title = "Sign up"
+  end
+  
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      # Treat a succefull treatment
+    else
+      @titre = "Sign In"
+      render 'new'
+    end
   end
 end
