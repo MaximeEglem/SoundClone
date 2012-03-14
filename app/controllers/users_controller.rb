@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      # Treat a succefull treatment
+      flash[:success] = "Welcome to SoundClone!"
+      redirect_to @user
     else
       @titre = "Sign In"
       render 'new'

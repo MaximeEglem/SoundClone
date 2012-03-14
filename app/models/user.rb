@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :name,  presence: true, length: { maximum: 50 }
+  #validates :name,  presence: true, length: { maximum: 50 }
   
    # Automatically create the virtual attribute 'password_confirmation'.
   validates :password, :presence     => true,
