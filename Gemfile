@@ -38,6 +38,7 @@ gem 'jquery-rails'
 group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'annotate', '~> 2.4.1.beta'
+  gem 'faker', '0.3.1'
 end
 
 group :test do
