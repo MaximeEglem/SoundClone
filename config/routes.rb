@@ -1,4 +1,6 @@
 SoundClone::Application.routes.draw do
+  get "sessions/new"
+
   resources :users
 
   match '/signup',  :to => 'users#new'
