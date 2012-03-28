@@ -3,10 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'will_paginate', '3.0.3'
 gem 'mysql2'
 if Config::CONFIG['target_os'] != 'mingw32'
     gem 'therubyracer'					# gem 'therubyracer' : don't work on Windows

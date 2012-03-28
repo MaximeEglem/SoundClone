@@ -4,7 +4,7 @@ before_filter :correct_user, :only => [:edit, :update]
 
   def index
     @titre = "All Users"
-    @users = User.all
+    @users = User.paginate(:page => params[:page])
   end
 
   def show
