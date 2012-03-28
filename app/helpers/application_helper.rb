@@ -8,4 +8,8 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+  
+  def logo
+	image_tag("SoundClone_logo.png", :alt => "SoundClone", :class => "round")
+  end
 end

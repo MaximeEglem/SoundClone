@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+	  sign_in @user		#	Signin directly the user after creation an account
       flash[:success] = "Welcome to SoundClone!"
       redirect_to @user
     else
@@ -19,4 +20,5 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
 end
