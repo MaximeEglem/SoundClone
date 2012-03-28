@@ -4,13 +4,13 @@ before_filter :correct_user, :only => [:edit, :update]
 before_filter :admin_user,     only: :destroy
   
   def index
-    @titre = "All Users"
+    @title = "All Users"
     @users = User.paginate(:page => params[:page])
   end
 
   def show
     @user = User.find(params[:id])
-    @titre = @user.name
+    @title = @user.name
   end
 
   def new
@@ -25,7 +25,7 @@ before_filter :admin_user,     only: :destroy
       flash[:success] = "Welcome to SoundClone!"
       redirect_to @user
     else
-      @titre = "Sign In"
+      @title = "Sign In"
       render 'new'
     end
   end
