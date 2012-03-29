@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
   
+  has_many :microposts
+  has_many :microposts, :dependent => :destroy
+  
 #	/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i	full regex
 #	/	start of regex
 #	\A	match start of a string
