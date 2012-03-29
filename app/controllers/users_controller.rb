@@ -56,12 +56,7 @@ before_filter :admin_user,     only: :destroy
   
   private
 
-    def authenticate
-	unless signed_in?
-        store_location
-        redirect_to signin_path, notice: "Please sign in."
-      end
-    end
+
 	
 	def correct_user
       @user = User.find(params[:id])
