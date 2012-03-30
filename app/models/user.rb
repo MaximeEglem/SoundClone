@@ -15,6 +15,14 @@ class User < ActiveRecord::Base
   
   has_many :microposts
   has_many :microposts, :dependent => :destroy
+  has_many :follower_relationships, :foreign_key => "follower_id",
+                           :dependent => :destroy
+  has_many :following, :through => :follower_relationships, :source => :followed
+
+  has_many :reverse_follower_relationships, :foreign_key => "followed_id",
+                                   :class_name => "FollowerRelationship",
+                                   :dependent => :destroy
+  has_many :followers, :through => :reverse_follower_relationships, :source => :follower
   
 #	/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i	full regex
 #	/	start of regex
@@ -58,6 +66,18 @@ class User < ActiveRecord::Base
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
+  end
+  
+  def following?(followed)
+    follower_relationships.find_by_followed_id(followed)
+  end
+
+  def follow!(followed)
+    follower_relationships.create!(:followed_id => followed.id)
+  end
+
+  def unfollow!(followed)
+    follower_relationships.find_by_followed_id(followed).destroy
   end
   
   def feed
