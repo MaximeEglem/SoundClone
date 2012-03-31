@@ -13,11 +13,10 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
   
-  has_many :microposts
+
   has_many :microposts, :dependent => :destroy
-  has_many :follower_relationships, :foreign_key => "follower_id",
-                           :dependent => :destroy
-  has_many :following, :through => :follower_relationships, :source => :followed
+  has_many :follower_relationships, :foreign_key => "follower_id", :dependent => :destroy
+  has_many :followed_users, through: :follower_relationships, source: :followed
 
   has_many :reverse_follower_relationships, :foreign_key => "followed_id",
                                    :class_name => "FollowerRelationship",
@@ -36,7 +35,9 @@ class User < ActiveRecord::Base
 #  /	end of regex
 #	i	case insensitive
 
-  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+ 
 
   validates :name,  presence: true, length: { maximum: 50 }
   
@@ -45,6 +46,7 @@ class User < ActiveRecord::Base
                        :confirmation => true,
                        :length       => { :within => 6..40 }
 
+					   
   before_save :encrypt_password
 
   def has_password?(submitted_password)
@@ -68,16 +70,16 @@ class User < ActiveRecord::Base
     (user && user.salt == cookie_salt) ? user : nil
   end
   
-  def following?(followed)
-    follower_relationships.find_by_followed_id(followed)
+  def following?(other_user)
+    follower_relationships.find_by_followed_id(other_user.id)
   end
 
-  def follow!(followed)
-    follower_relationships.create!(:followed_id => followed.id)
+  def follow!(other_user)
+    follower_relationships.create!(followed_id: other_user.id)
   end
 
-  def unfollow!(followed)
-    follower_relationships.find_by_followed_id(followed).destroy
+  def unfollow!(other_user)
+    follower_relationships.find_by_followed_id(other_user.id).destroy
   end
   
   def feed

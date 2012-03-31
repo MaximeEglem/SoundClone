@@ -1,24 +1,25 @@
-<table class="profile" summary="Information profil">
-  <tr>
-    <td class="main">
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-	  <%= render 'follow_form' if signed_in? %>
-	  
-      <% unless @user.microposts.empty? %>
-        <table class="microposts" summary="User microposts">
-          <%= render @microposts %>
-        </table>
-        <%= will_paginate @microposts %>
-      <% end %>
-    </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
-	  <%= render 'shared/stats' %>
-    </td>
-  </tr>
-</table>
+    </section>
+	<section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>
+</div>
+  

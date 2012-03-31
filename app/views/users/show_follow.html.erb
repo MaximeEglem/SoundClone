@@ -1,25 +1,30 @@
-<table summary="Information about following/followers">
-  <tr>
-    <td class="main">
-      <h1><%= @title %></h1>
-
-      <% unless @users.empty? %>
-        <ul class="users">
-          <%= render @users %>
-        </ul>
-        <%= will_paginate @users %>
-      <% end %>
-    </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
+<%= provide(:title, @title) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= gravatar_for @user %>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+    </section>
+    <section>
       <%= render 'shared/stats' %>
       <% unless @users.empty? %>
-        <% @users.each do |user| %>
-          <%= link_to gravatar_for(user), user %>
-        <% end %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to gravatar_for(user, :size => 30), user %>
+          <% end %>
+        </div>
       <% end %>
-    </td>
-  </tr>
-</table>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate @users %>
+    <% end %>
+  </div>
+</div>
