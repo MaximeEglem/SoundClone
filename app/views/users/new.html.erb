@@ -1,12 +1,12 @@
-<% provide(:title, 'Sign up') %>
+<%= provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(:session, :url => sessions_path) do |f| %>
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
@@ -14,9 +14,10 @@
       <%= f.label :password %>
       <%= f.password_field :password %>
 
-      <%= f.submit "Sign in", :class => "btn btn-large btn-primary" %>
-    <% end %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      <%= f.submit "Create my account", :class => "btn btn-large btn-primary" %>
+    <% end %>
   </div>
 </div>
