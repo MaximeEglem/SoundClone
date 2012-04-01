@@ -1,4 +1,4 @@
-class CreateRelationships < ActiveRecord::Migration
+class CreateFollowerRelationships < ActiveRecord::Migration
   def self.up
     create_table :follower_relationships do |t|
       t.integer :follower_id
