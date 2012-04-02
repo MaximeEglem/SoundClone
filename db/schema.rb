@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330160613) do
+ActiveRecord::Schema.define(:version => 20120401161521) do
+
+  create_table "file_uploads", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "files", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "follower_relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -36,7 +50,6 @@ ActiveRecord::Schema.define(:version => 20120330160613) do
     t.string   "email"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
-    t.string   "password_digest"
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              :default => false

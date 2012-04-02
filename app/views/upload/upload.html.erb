@@ -1,0 +1,10 @@
+<img src="/images/users/Dogbert_icon.jpg">
+<% @post.each  do |image|  %>
+
+	
+  <img src="/images/users/<%= image["filename"] %>"/>
+  <br/>
+  <%= image["width"] %> x <%= image["height"] %>
+  <br/>
+
+<% end %>

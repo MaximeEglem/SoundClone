@@ -8,13 +8,19 @@ resources :users do
   resources :microposts, :only => [:create, :destroy]
   resources :follower_relationships, :only => [:create, :destroy]
   
+  match '/home',    :to => 'pages#home'	
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
+  match '/upload',   :to => 'upload#uploadfile'
+  match '/services/uploadr',   :to => 'upload#upload'
   
-  root :to => 'pages#home'
-  
-end
+	root :to => 'pages#home' 
+
+end	
+
+
+

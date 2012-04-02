@@ -1,0 +1,18 @@
+<!- app/views/upload/uploadfile.html.erb -->
+<script src="/assets/javascripts/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/javascripts/jquery_ujs.js?body=1" type="text/javascript"></script>
+
+<h1>Multiple Files Upload Using Rails and jQuery</h1>
+
+<h3>Files</h3>
+<form method="post" action="/services/uploadr"
+    enctype="multipart/form-data"
+    class="upload" id="upload_form">
+        <br/>
+	
+        <input type="button" id="button" class="button" value="Add File" />
+        <input type="submit" id="save" class="save" value="Upload" />
+</form>
+
+<h3>Images</h3>
+<div lang="images_container"></div>

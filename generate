@@ -1,0 +1,188 @@
+Script started on Sun 01 Apr 2012 05:11:23 PM UTC
+bitnami@linux:~/SoundClone$ sudo bundle install[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+bitnami@linux:~/SoundClone$ 
+bitnami@linux:~/SoundClone$ 
+bitnami@linux:~/SoundClone$ cd ..
+bitnami@linux:~$ cd twitter_zombie/
+bitnami@linux:~/twitter_zombie$ rake routes
+tweets_show GET    /tweets/show(.:format)     tweets#show
+tweets_edit GET    /tweets/edit(.:format)     tweets#edit
+     upload        /upload(.:format)          upload#uploadfile
+     tweets GET    /tweets(.:format)          tweets#index
+            POST   /tweets(.:format)          tweets#create
+  new_tweet GET    /tweets/new(.:format)      tweets#new
+ edit_tweet GET    /tweets/:id/edit(.:format) tweets#edit
+      tweet GET    /tweets/:id(.:format)      tweets#show
+            PUT    /tweets/:id(.:format)      tweets#update
+            DELETE /tweets/:id(.:format)      tweets#destroy
+bitnami@linux:~/twitter_zombie$ [Kbitnami@linux:~/twitter_zombie$ 
+bitnami@linux:~/twitter_zombie$ cd [K[K[Krails generate controller Tweets index new creat e show edit update destroy
+[1m[31m    conflict[0m  app/controllers/tweets_controller.rb
+Overwrite /home/bitnami/twitter_zombie/app/controllers/tweets_controller.rb? (enter "h" for help) [Ynaqdh] 
+[1m[33m       force[0m  app/controllers/tweets_controller.rb
+[1m[32m       route[0m  get "tweets/destroy"
+[1m[32m       route[0m  get "tweets/update"
+[1m[32m       route[0m  get "tweets/edit"
+[1m[32m       route[0m  get "tweets/show"
+[1m[32m       route[0m  get "tweets/create"
+[1m[32m       route[0m  get "tweets/new"
+[1m[32m       route[0m  get "tweets/index"
+[1m[37m      invoke[0m  erb
+[1m[34m       exist[0m    app/views/tweets
+[1m[32m      create[0m    app/views/tweets/index.html.erb
+[1m[32m      create[0m    app/views/tweets/new.html.erb
+[1m[32m      create[0m    app/views/tweets/create.html.erb
+[1m[31m    conflict[0m    app/views/tweets/show.html.erb
+  Overwrite /home/bitnami/twitter_zombie/app/views/tweets/show.html.erb? (enter "h" for help) [Ynaqdh] n
+[1m[33m        skip[0m    app/views/tweets/show.html.erb
+[1m[34m   identical[0m    app/views/tweets/edit.html.erb
+[1m[32m      create[0m    app/views/tweets/update.html.erb
+[1m[32m      create[0m    app/views/tweets/destroy.html.erb
+[1m[37m      invoke[0m  test_unit
+[1m[31m    conflict[0m    test/functional/tweets_controller_test.rb
+  Overwrite /home/bitnami/twitter_zombie/test/functional/tweets_controller_test.rb? (enter "h" for help) [Ynaqdh] 
+[1m[33m       force[0m    test/functional/tweets_controller_test.rb
+[1m[37m      invoke[0m  helper
+[1m[34m   identical[0m    app/helpers/tweets_helper.rb
+[1m[37m      invoke[0m    test_unit
+[1m[34m   identical[0m      test/unit/helpers/tweets_helper_test.rb
+[1m[37m      invoke[0m  assets
+[1m[37m      invoke[0m    coffee
+[1m[34m   identical[0m      app/assets/javascripts/tweets.js.coffee
+[1m[37m      invoke[0m    scss
+[1m[34m   identical[0m      app/assets/stylesheets/tweets.css.scss
+bitnami@linux:~/twitter_zombie$ rake dm[Kb:migrate
+bitnami@linux:~/twitter_zombie$ rake db:migrateils generate controller Tweets index new createe show edit update destroy[A[C[C[C[C[C[C[C[Cke routes[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cils generate controller Tweets index new createe show edit update destroy[A[C[C[C[C[C[C[C[Cke routes[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd twitter_zombie/..[Ksudo bundle install[12Prails scd upload/..[Krails sls[Ktar xfvz Maxxi-SoundClone-94ad8ee.tar.gz[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit clone git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Ptar xfvz Maxxi-SoundClone-94ad8ee.tar.gz[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krails s[2Pcd ..upload/[3Prails ssudo bundle installcd ..[Ktwitter_zombie/[7Prake routesils generate controller Tweets index new createe show edit update destroy[A[C[C[C[C[C[C[C[Cke db:migrate[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Krake db:migrateils generate controller Tweets index new createe show edit update destroy[A[C[C[C[C[C[C[C[Cke routes[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd twitter_zombie/..[Ksudo bundle install[12Prails s[K[K[K[K[K[K[Kcd ..
+bitnami@linux:~$ cd SoundClone/
+bitnami@linux:~/SoundClone$ cd SoundClone/..[Krake db:migrateils generate controller Tweets index new create shoow edit update destroy[A[C[C[C[C[C[C[C[Cke routes[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cils generate controller Tweets index new create shoow edit update destroy[A[C[C[C[C[C[C[C[Cke routes[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd twitter_zombie/..[Ksudo bundle install[12Prails scd upload/..[Krails sls[Ktar xfvz Maxxi-SoundClone-94ad8ee.tar.gz[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit clone git@github.com:sgl8fe/SoundClone.gitmaster[Kgit@github.com:sgl8fe/SoundClone.gitmaster[Kgit@github.com:sgl8fe/SoundClone.git
+Cloning into 'SoundClone'...
+Enter passphrase for key '/home/bitnami/.ssh/id_rsa': 
+remote: Counting objects: 71, done.[K
+remote: Compressing objects:   2% (1/49)   [Kremote: Compressing objects:   4% (2/49)   [Kremote: Compressing objects:   6% (3/49)   [Kremote: Compressing objects:   8% (4/49)   [Kremote: Compressing objects:  10% (5/49)   [Kremote: Compressing objects:  12% (6/49)   [Kremote: Compressing objects:  14% (7/49)   [Kremote: Compressing objects:  16% (8/49)   [Kremote: Compressing objects:  18% (9/49)   [Kremote: Compressing objects:  20% (10/49)   [Kremote: Compressing objects:  22% (11/49)   [Kremote: Compressing objects:  24% (12/49)   [Kremote: Compressing objects:  26% (13/49)   [Kremote: Compressing objects:  28% (14/49)   [Kremote: Compressing objects:  30% (15/49)   [Kremote: Compressing objects:  32% (16/49)   [Kremote: Compressing objects:  34% (17/49)   [Kremote: Compressing objects:  36% (18/49)   [Kremote: Compressing objects:  38% (19/49)   [Kremote: Compressing objects:  40% (20/49)   [Kremote: Compressing objects:  42% (21/49)   [Kremote: Compressing objects:  44% (22/49)   [Kremote: Compressing objects:  46% (23/49)   [Kremote: Compressing objects:  48% (24/49)   [Kremote: Compressing objects:  51% (25/49)   [Kremote: Compressing objects:  53% (26/49)   [Kremote: Compressing objects:  55% (27/49)   [Kremote: Compressing objects:  57% (28/49)   [Kremote: Compressing objects:  59% (29/49)   [Kremote: Compressing objects:  61% (30/49)   [Kremote: Compressing objects:  63% (31/49)   [Kremote: Compressing objects:  65% (32/49)   [Kremote: Compressing objects:  67% (33/49)   [Kremote: Compressing objects:  69% (34/49)   [Kremote: Compressing objects:  71% (35/49)   [Kremote: Compressing objects:  73% (36/49)   [Kremote: Compressing objects:  75% (37/49)   [Kremote: Compressing objects:  77% (38/49)   [Kremote: Compressing objects:  79% (39/49)   [Kremote: Compressing objects:  81% (40/49)   [Kremote: Compressing objects:  83% (41/49)   [Kremote: Compressing objects:  85% (42/49)   [Kremote: Compressing objects:  87% (43/49)   [Kremote: Compressing objects:  89% (44/49)   [Kremote: Compressing objects:  91% (45/49)   [Kremote: Compressing objects:  93% (46/49)   [Kremote: Compressing objects:  95% (47/49)   [Kremote: Compressing objects:  97% (48/49)   [Kremote: Compressing objects: 100% (49/49)   [Kremote: Compressing objects: 100% (49/49), done.[K
+Receiving objects:   1% (1/71)   Receiving objects:   2% (2/71)   Receiving objects:   4% (3/71)   Receiving objects:   5% (4/71)   Receiving objects:   7% (5/71)   Receiving objects:   8% (6/71)   Receiving objects:   9% (7/71)   Receiving objects:  11% (8/71)   Receiving objects:  12% (9/71)   Receiving objects:  14% (10/71)   Receiving objects:  15% (11/71)   Receiving objects:  16% (12/71)   Receiving objects:  18% (13/71)   Receiving objects:  19% (14/71)   Receiving objects:  21% (15/71)   Receiving objects:  22% (16/71)   remote: Total 71 (delta 6), reused 71 (delta 6)[K
+Receiving objects:  23% (17/71)   Receiving objects:  25% (18/71)   Receiving objects:  26% (19/71)   Receiving objects:  28% (20/71)   Receiving objects:  29% (21/71)   Receiving objects:  30% (22/71)   Receiving objects:  32% (23/71)   Receiving objects:  33% (24/71)   Receiving objects:  35% (25/71)   Receiving objects:  36% (26/71)   Receiving objects:  38% (27/71)   Receiving objects:  39% (28/71)   Receiving objects:  40% (29/71)   Receiving objects:  42% (30/71)   Receiving objects:  43% (31/71)   Receiving objects:  45% (32/71)   Receiving objects:  46% (33/71)   Receiving objects:  47% (34/71)   Receiving objects:  49% (35/71)   Receiving objects:  50% (36/71)   Receiving objects:  52% (37/71)   Receiving objects:  53% (38/71)   Receiving objects:  54% (39/71)   Receiving objects:  56% (40/71)   Receiving objects:  57% (41/71)   Receiving objects:  59% (42/71)   Receiving objects:  60% (43/71)   Receiving objects:  61% (44/71)   Receiving objects:  63% (45/71)   Receiving objects:  64% (46/71)   Receiving objects:  66% (47/71)   Receiving objects:  67% (48/71)   Receiving objects:  69% (49/71)   Receiving objects:  70% (50/71)   Receiving objects:  71% (51/71)   Receiving objects:  73% (52/71)   Receiving objects:  74% (53/71)   Receiving objects:  76% (54/71)   Receiving objects:  77% (55/71)   Receiving objects:  78% (56/71)   Receiving objects:  80% (57/71)   Receiving objects:  81% (58/71)   Receiving objects:  83% (59/71)   Receiving objects:  84% (60/71)   Receiving objects:  85% (61/71)   Receiving objects:  87% (62/71)   Receiving objects:  88% (63/71)   Receiving objects:  90% (64/71)   Receiving objects:  91% (65/71)   Receiving objects:  92% (66/71)   Receiving objects:  94% (67/71)   Receiving objects:  95% (68/71)   Receiving objects:  97% (69/71)   Receiving objects:  98% (70/71)   Receiving objects: 100% (71/71)   Receiving objects: 100% (71/71), 27.14 KiB, done.
+Resolving deltas:   0% (0/6)   Resolving deltas:  50% (3/6)   Resolving deltas:  66% (4/6)   Resolving deltas: 100% (6/6)   Resolving deltas: 100% (6/6), done.
+bitnami@linux:~/SoundClone$ git pull
+Enter passphrase for key '/home/bitnami/.ssh/id_rsa': 
+You asked me to pull without telling me which branch you
+want to merge with, and 'branch.upload-file.merge' in
+your configuration file does not tell me, either. Please
+specify which branch you want to use on the command line and
+try again (e.g. 'git pull <repository> <refspec>').
+See git-pull(1) for details.
+
+If you often merge with the same branch, you may want to
+use something like the following in your configuration file:
+    [branch "upload-file"]
+    remote = <nickname>
+    merge = <remote-ref>
+
+    [remote "<nickname>"]
+    url = <url>
+    fetch = <refspec>
+
+See git-config(1) for details.
+bitnami@linux:~/SoundClone$ git pullclone git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd SoundClone/[K..[KSoundClone/git clone git@github.com:sgl8fe/SoundClone.git[C[C[1P git@github.com:sgl8fe/SoundClone.git[1P git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl git@github.com:sgl8fe/SoundClone.git
+Enter passphrase for key '/home/bitnami/.ssh/id_rsa': 
+From github.com:sgl8fe/SoundClone
+ * branch            HEAD       -> FETCH_HEAD
+Already up-to-date.
+bitnami@linux:~/SoundClone$ git branch
+  following-users[m
+  master[m
+  new_interface[m
+* [32mupload-file[m
+  user-microposts[m
+bitnami@linux:~/SoundClone$ gir [K[Kt branch -a
+  following-users[m
+  master[m
+  new_interface[m
+* [32mupload-file[m
+  user-microposts[m
+  [31mremotes/origin/HEAD[m -> origin/master
+  [31mremotes/origin/following-users[m
+  [31mremotes/origin/master[m
+  [31mremotes/origin/new_interface[m
+  [31mremotes/origin/sign-in-out[m
+  [31mremotes/origin/updating-users[m
+  [31mremotes/origin/user-microposts[m
+bitnami@linux:~/SoundClone$ 
+bitnami@linux:~/SoundClone$ 
+bitnami@linux:~/SoundClone$ rails generate model uploadedfile
+/home/bitnami/SoundClone/Gemfile:11: Use RbConfig instead of obsolete and deprecated Config.
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20120401175641_create_uploadedfiles.rb
+[1m[32m      create[0m    app/models/uploadedfile.rb
+[1m[37m      invoke[0m    rspec
+[1m[32m      create[0m      spec/models/uploadedfile_spec.rb
+bitnami@linux:~/SoundClone$ rails generate model uploadedfile[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kenerate migration createuploadedfiles
+/home/bitnami/SoundClone/Gemfile:11: Use RbConfig instead of obsolete and deprecated Config.
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20120401175729_createuploadedfiles.rb
+bitnami@linux:~/SoundClone$ rails generate migration createuploadedfiles[11Podel uploadedfile[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcontroller upload
+/home/bitnami/SoundClone/Gemfile:11: Use RbConfig instead of obsolete and deprecated Config.
+[1m[32m      create[0m  app/controllers/upload_controller.rb
+[1m[37m      invoke[0m  erb
+[1m[32m      create[0m    app/views/upload
+[1m[37m      invoke[0m  rspec
+[1m[32m      create[0m    spec/controllers/upload_controller_spec.rb
+[1m[37m      invoke[0m  helper
+[1m[32m      create[0m    app/helpers/upload_helper.rb
+[1m[37m      invoke[0m    rspec
+[1m[32m      create[0m      spec/helpers/upload_helper_spec.rb
+[1m[37m      invoke[0m  assets
+[1m[37m      invoke[0m    coffee
+[1m[32m      create[0m      app/assets/javascripts/upload.js.coffee
+[1m[37m      invoke[0m    scss
+[1m[32m      create[0m      app/assets/stylesheets/upload.css.scss
+bitnami@linux:~/SoundClone$ gem install jquery
+ERROR:  Could not find a valid gem 'jquery' (>= 0) in any repository
+ERROR:  Possible alternatives: rquery, mdquery
+bitnami@linux:~/SoundClone$ sudo apt-get isntall [K[K[K[K[K[K[Knstall libimage-size-ruby1.8
+[sudo] password for bitnami: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 1%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 1%Reading state information... Done
+The following NEW packages will be installed:
+  libimage-size-ruby1.8
+0 upgraded, 1 newly installed, 0 to remove and 1 not upgraded.
+Need to get 6,988B of archives.
+After this operation, 69.6kB of additional disk space will be used.
+0% [Working]            Get:1 http://archive.ubuntu.com/ubuntu/ maverick/universe libimage-size-ruby1.8 all 1:0.1.1-4.1 [6,988B]
+            0% [1 libimage-size-ruby1.8 0B/6,988B 0%]                                         100% [Working]              Fetched 6,988B in 0s (54.0kB/s)
+Selecting previously deselected package libimage-size-ruby1.8.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 24643 files and directories currently installed.)
+Unpacking libimage-size-ruby1.8 (from .../libimage-size-ruby1.8_1%3a0.1.1-4.1_all.deb) ...
+Setting up libimage-size-ruby1.8 (1:0.1.1-4.1) ...
+bitnami@linux:~/SoundClone$ git pulö[Kll
+git: 'pulll' is not a git command. See 'git --help'.
+
+Did you mean this?
+	pull
+bitnami@linux:~/SoundClone$ git pulll[C[K
+Enter passphrase for key '/home/bitnami/.ssh/id_rsa': 
+You asked me to pull without telling me which branch you
+want to merge with, and 'branch.upload-file.merge' in
+your configuration file does not tell me, either. Please
+specify which branch you want to use on the command line and
+try again (e.g. 'git pull <repository> <refspec>').
+See git-pull(1) for details.
+
+If you often merge with the same branch, you may want to
+use something like the following in your configuration file:
+    [branch "upload-file"]
+    remote = <nickname>
+    merge = <remote-ref>
+
+    [remote "<nickname>"]
+    url = <url>
+    fetch = <refspec>
+
+See git-config(1) for details.
+bitnami@linux:~/SoundClone$ git pulllsudo apt-get install libimage-size-ruby1.8[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pgem install jquerysudo apt-get install libimage-size-ruby1.8[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pgem install jqueryrails generate controller uploadmigration createuploadedfiles[11Podel uploadedfile[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pgit branch -a[Kpull git@github.com:sgl8fe/SoundClone.git[Kclone git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd SoundClone/[Kgit clone git@github.com:sgl8fe/SoundClone.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd SoundClone/[K..[Krake 

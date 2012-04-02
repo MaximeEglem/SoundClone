@@ -1,4 +1,5 @@
-<% provide(:title, "Edit user") %> 
+<% provide(:title, "Edit user") %>
+<% form_for @upload, :html => { :multipart => true } do |form| %> 
 <h1>Update your profile</h1>
 
 <div class="row">
@@ -23,5 +24,14 @@
 
     <%= gravatar_for @user %>
     <a href="http://gravatar.com/emails">change</a>
+
+	<li>
+   	   <%= form.label :photo, "Photo" %>
+    	  <%= form.file_field :photo %>
+   	 <li>
+   	   <%= form.submit "Submit" %>
+  	  </li>
+
   </div>
 </div>
+<% end %>
