@@ -5,7 +5,7 @@ resources :users do
     end
   end
   resources :sessions,   :only => [:new, :create, :destroy]
-  resources :microposts, :only => [:create, :destroy]
+  resources :microposts, :only => [:create, :destroy, :update]
   resources :follower_relationships, :only => [:create, :destroy]
   
   match '/signup',  :to => 'users#new'

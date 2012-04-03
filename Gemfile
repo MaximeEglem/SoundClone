@@ -8,6 +8,7 @@ gem 'mysql2'
 if Config::CONFIG['target_os'] != 'mingw32'
     gem 'therubyracer'					# gem 'therubyracer' : don't work on Windows
 end
+gem 'best_in_place'
 
 
 # Gems used only for assets and not required

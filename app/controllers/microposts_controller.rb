@@ -1,4 +1,5 @@
 class MicropostsController < ApplicationController
+respond_to :html, :json
  before_filter :authenticate, :only => [:create, :destroy]
   before_filter :authorized_user, :only => :destroy
   
@@ -13,11 +14,23 @@ class MicropostsController < ApplicationController
     end
   end
   
+  def update
+    @micropost = current_user.micropost.find(params[:micropost])
+    if @micropost.update_attributes(params[:micropost])
+	respond_with @micropost
+      flash[:success] = "Micropost updated."
+      redirect_to root_path
+    else
+      @title = "Edit micropost"
+      redirect_to current_user
+    end
+  end
+  
   def destroy
     @micropost.destroy
     redirect_back_or root_path
   end
-  
+ 
    private
 
     def authorized_user
