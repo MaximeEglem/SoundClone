@@ -10,20 +10,16 @@ respond_to :html, :json
       redirect_to root_path
     else
       @feed_items = []
-      render 'pages/home'
+      render root_path
     end
   end
   
   def update
-    @micropost = current_user.micropost.find(params[:micropost])
-    if @micropost.update_attributes(params[:micropost])
+    @micropost = current_user.microposts.find(params[:id])
+    @micropost.update_attributes(params[:micropost])
 	respond_with @micropost
-      flash[:success] = "Micropost updated."
-      redirect_to root_path
-    else
-      @title = "Edit micropost"
-      redirect_to current_user
-    end
+   
+    
   end
   
   def destroy

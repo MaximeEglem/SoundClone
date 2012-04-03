@@ -18,6 +18,10 @@ def make_users
                  email: "maxime.eglem@gmail.com",
                  password: "maxime",
                  password_confirmation: "maxime")
+	User.create!(name: "Alexander Hensel",
+                 email: "alexhenselbb@web.de",
+                 password: "alex",
+                 password_confirmation: "alex")
     99.times do |n|
       name  = Faker::Name.name
       email = "AccountTest-#{n+1}@gmail.com"
