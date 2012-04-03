@@ -1,4 +1,5 @@
 class MicropostsController < ApplicationController
+respond_to :html, :json
  before_filter :authenticate, :only => [:create, :destroy]
   before_filter :authorized_user, :only => :destroy
   
@@ -9,15 +10,23 @@ class MicropostsController < ApplicationController
       redirect_to root_path
     else
       @feed_items = []
-      render 'pages/home'
+      render root_path
     end
+  end
+  
+  def update
+    @micropost = current_user.microposts.find(params[:id])
+    @micropost.update_attributes(params[:micropost])
+	respond_with @micropost
+   
+    
   end
   
   def destroy
     @micropost.destroy
     redirect_back_or root_path
   end
-  
+ 
    private
 
     def authorized_user
