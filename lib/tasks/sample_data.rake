@@ -10,7 +10,7 @@ end
 
 def make_users
     administrateur = User.create!(:name => "Administrator",
-                         :email => "Administrator@soundclone.com",
+                         :email => "soundclone@yopmail.com",
                          :password => "administrator",
                          :password_confirmation => "administrator")
     administrateur.toggle!(:admin)
