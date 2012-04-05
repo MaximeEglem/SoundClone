@@ -20,11 +20,11 @@ def make_users
                  password_confirmation: "maxime")
 	User.create!(name: "Alexander Hensel",
                  email: "alexhenselbb@web.de",
-                 password: "alex",
-                 password_confirmation: "alex")
+                 password: "alexandre",
+                 password_confirmation: "alexandre")
     99.times do |n|
       name  = Faker::Name.name
-      email = "AccountTest-#{n+1}@gmail.com"
+      email = "accountsoundclone#{n+1}@yopmail.com"
       password  = "password"
       User.create!(name: name,
                    email: email,
