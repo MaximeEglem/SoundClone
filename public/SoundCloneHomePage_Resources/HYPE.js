@@ -587,11 +587,11 @@ var HYPE = (function HYPE() {
 			\
 			@-webkit-keyframes HYPE_swapToFront {\
 				0% {\
-					-webkit-transform: translate3d(-196.25px, 0px, -600px) rotateY(50deg);\
+					-webkit-transform: translate3d(-210px, 0px, -600px) rotateY(50deg);\
 					-webkit-animation-timing-function: ease-in;\
 				}\
 				50% {\
-					-webkit-transform: translate3d(-392.5px, 0px, -300px) rotateY(40deg);\
+					-webkit-transform: translate3d(-420px, 0px, -300px) rotateY(40deg);\
 					-webkit-animation-timing-function: ease-out;\
 				}\
 				100% {\
@@ -605,12 +605,12 @@ var HYPE = (function HYPE() {
 					-webkit-animation-timing-function: ease-in;\
 				}\
 				50% {\
-					-webkit-transform: translate3d(392.5px, 0px, -300px) rotateY(-20deg);\
+					-webkit-transform: translate3d(420px, 0px, -300px) rotateY(-20deg);\
 					-webkit-animation-timing-function: ease-out;\
 				}\
 			\
 				100% {\
-					-webkit-transform: translate3d(196.25px, 0px, -600px) rotateY(-50deg);\
+					-webkit-transform: translate3d(210px, 0px, -600px) rotateY(-50deg);\
 				}\
 			}\
 			\
