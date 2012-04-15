@@ -1,4 +1,14 @@
 SoundClone::Application.routes.draw do
+  get "pages/searchResults"
+
+  get "pages/home"
+
+  get "pages/contact"
+
+  get "pages/about"
+
+  get "pages/search"
+
 resources :users do
     member do
       get :following, :followers
@@ -14,6 +24,9 @@ resources :users do
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
+  match '/search',  :to => 'pages#search'
+  match '/results',  :to => 'pages#searchResults'
+  
   
   root :to => 'pages#home'
   

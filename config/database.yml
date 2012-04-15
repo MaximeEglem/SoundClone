@@ -15,7 +15,7 @@ development:
   database: SoundClone_development
   pool: 5
   username: root
-  password:
+  password: bitnami
   host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: SoundClone_test
   pool: 5
   username: root
-  password:
+  password: bitnami
   host: 127.0.0.1
 
 production:
@@ -38,5 +38,5 @@ production:
   database: SoundClone_production
   pool: 5
   username: root
-  password:
+  password: bitnami
   host: 127.0.0.1
