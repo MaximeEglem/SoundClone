@@ -23,6 +23,9 @@ class User < ActiveRecord::Base
                                    :dependent => :destroy
   has_many :followers, :through => :reverse_follower_relationships, :source => :follower
   
+  has_many :messages
+  has_many :upload_files
+  
 #	/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i	full regex
 #	/	start of regex
 #	\A	match start of a string

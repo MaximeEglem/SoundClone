@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330160613) do
+ActiveRecord::Schema.define(:version => 20120415003052) do
 
   create_table "follower_relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -24,9 +24,28 @@ ActiveRecord::Schema.define(:version => 20120330160613) do
   add_index "follower_relationships", ["follower_id", "followed_id"], :name => "index_follower_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "follower_relationships", ["follower_id"], :name => "index_follower_relationships_on_follower_id"
 
+  create_table "message_to_users", :force => true do |t|
+    t.date     "date_of_sending"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "microposts", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "upload_files", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -36,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20120330160613) do
     t.string   "email"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
-    t.string   "password_digest"
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              :default => false
