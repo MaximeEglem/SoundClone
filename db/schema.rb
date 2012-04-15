@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120415003052) do
+ActiveRecord::Schema.define(:version => 20120415005643) do
 
   create_table "follower_relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20120415003052) do
     t.date     "date_of_sending"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "message_id"
+    t.integer  "user_id"
   end
 
   create_table "messages", :force => true do |t|
@@ -53,11 +55,12 @@ ActiveRecord::Schema.define(:version => 20120415003052) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "encrypted_password"
     t.string   "salt"
-    t.boolean  "admin",              :default => false
+    t.boolean  "admin",               :default => false
+    t.integer  "message_to_users_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :email	  
-	  add_column :message_to_users, :user_id, :integer
+	  
 
       t.timestamps
     end
