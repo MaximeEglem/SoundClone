@@ -1,0 +1,20 @@
+<h1>Results</h1>
+<p>
+  <b>Keywords:</b>
+  <%= @research.keywords %>
+</p>
+<br>
+
+  <%= render :partial => @research.users%>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= link_to 'Edit search', edit_research_path(@research), :class => "btn btn-large btn-primary" %> 
+<%= link_to 'Back', researches_path, :class => "btn btn-large btn-primary" %>
